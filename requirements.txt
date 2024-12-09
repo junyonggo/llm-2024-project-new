@@ -17,3 +17,4 @@ pydantic
 streamlit
 streamlit_book
 streamlit-extras
+streamlit-option-menu

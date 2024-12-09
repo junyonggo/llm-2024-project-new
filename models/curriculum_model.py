@@ -1,14 +1,16 @@
+import streamlit as st
 from config import Config
 from openai import OpenAI
 from data.CurriculumOverview import CurriculumOverview
 from data.CurriculumUnit import CurriculumUnit
 from data.Lesson import Lesson
 
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 class CurriculumCreatorModel:
     def __init__(self):
         self.client = OpenAI(
-            api_key=Config.OPENAI_API_KEY,  # This is the default and can be omitted
+            api_key=OPENAI_API_KEY,  # This is the default and can be omitted
         )
         self.conversation_history = []  # Stores context as a list of messages
 

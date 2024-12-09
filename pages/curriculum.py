@@ -1,6 +1,7 @@
 import json
 import streamlit as st
 import streamlit_book as stb
+from streamlit_option_menu import option_menu
 
 # Check if required session state variables exist
 if "curriculum_overview" not in st.session_state or "grade_level" not in st.session_state or "subject" not in st.session_state or "topic" not in st.session_state:
@@ -17,6 +18,11 @@ st.title("Curriculum")
 
 units = []
 unit_tabs = []
+
+# with st.sidebar:
+#     selected = option_menu("Main Menu", ["Home", 'Settings'], 
+#         icons=['house', 'gear'], menu_icon="cast", default_index=1)
+#     selected
 
 if "unit_tabs" not in st.session_state:
 

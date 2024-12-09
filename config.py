@@ -10,5 +10,6 @@ class Config:
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")  # Add your API key to .env
     MODEL_NAME = "gpt-4o-2024-08-06"
     MAX_TOKENS = 1000
-    TEMPERATURE = 0.7
+    TEMPERATURE = 0.3
     IMAGE_SIZE = "1024x1024"
+    IMAGE_STYLE = "natural"

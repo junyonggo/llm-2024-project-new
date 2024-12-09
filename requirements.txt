@@ -1,0 +1,19 @@
+torch
+datasets
+numpy
+pandas
+openai
+langchain
+langchain-community
+langchain-core
+langchain-openai
+python-dotenv
+flask        # or FastAPI for a web interface
+gunicorn     # for deployment
+fastapi
+uvicorn
+jinja2  # For rendering templates
+pydantic
+streamlit
+streamlit_book
+streamlit-extras

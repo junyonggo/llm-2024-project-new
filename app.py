@@ -2,6 +2,7 @@ import streamlit as st
 from models.curriculum_model import CurriculumCreatorModel
 from models.image_model import ImageCreatorModel
 
+# Initialize the OpenAI models to generate our curriculum and images
 st.session_state["curriculum_model"] = CurriculumCreatorModel()
 st.session_state["image_model"] = ImageCreatorModel()
 

@@ -8,7 +8,7 @@ if "curriculum_overview" not in st.session_state or "grade_level" not in st.sess
     st.error("Please go to the home page and create the curriculum overview first!")
     st.stop()
 
-# Retrieve inputs
+# Retrieve our models and inputs
 curriculum_model = st.session_state["curriculum_model"]
 curriculum_overview = st.session_state["curriculum_overview"]
 curriculum_units_overview = curriculum_overview["units"]
@@ -18,11 +18,6 @@ st.title("Curriculum")
 
 units = []
 unit_tabs = []
-
-# with st.sidebar:
-#     selected = option_menu("Main Menu", ["Home", 'Settings'], 
-#         icons=['house', 'gear'], menu_icon="cast", default_index=1)
-#     selected
 
 if "unit_tabs" not in st.session_state:
 
@@ -39,6 +34,7 @@ for unit, tab in zip(curriculum_units_overview, tabs):
         unit_container = st.container(border=True)
         unit_container.header(unit["title"])
 
+        # Generate the entire unit and an image for it if it doesn't exist
         if unit["title"] not in st.session_state:
             with st.spinner('Creating the Unit...'):
                 curriculum_unit_str = curriculum_model.generate_curriculum_unit(unit["overview"], unit["lessons"], unit["assignments"])
@@ -52,7 +48,8 @@ for unit, tab in zip(curriculum_units_overview, tabs):
 
         unit_container.image(curriculum_unit_img, use_container_width=True)
         unit_container.write(unit["overview"])
-        
+
+        # Populate the lessons, including the paragraphs and quiz
         for lesson in curriculum_unit["lessons"]:
             lesson_expander = st.expander(lesson["title"])
             lesson_expander.subheader(lesson["title"])

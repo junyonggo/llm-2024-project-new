@@ -1,4 +1,4 @@
-
+GRADE_LEVEL_PLACEHOLDER = "Select Grade Level..."
 SUBJECT_PLACEHOLDER = "Math, Reading, Writing, etc."
 TOPIC_PLACEHOLDER = "Sports, Arts, Dancing, Dinosaurs, etc."
 
